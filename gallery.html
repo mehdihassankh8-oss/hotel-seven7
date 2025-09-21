@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Hotel Seven 7 Karachi</title>
+  <meta name="description" content="Explore the gallery of Hotel Seven 7 Karachi – rooms, suites, dining, and amenities." />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    .glass{backdrop-filter:saturate(140%) blur(10px);}
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    #lightbox img {<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Hotel Seven 7 Karachi</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    .glass{backdrop-filter:saturate(140%) blur(10px);}
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 50;
+    }
+    #lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .lightbox-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      user-select: none;
+      padding: 0 20px;
+    }
+    .lightbox-controls span {
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .lightbox-controls span:hover { background: rgba(0,0,0,0.8); }
+    #lightbox-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    #lightbox-close:hover { background: rgba(0,0,0,0.8); }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+
+  <!-- Top bar -->
+  <div class="w-full bg-emerald-700 text-white text-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
+      <a class="underline flex items-center gap-2" href="https://wa.me/923272583013?text=Hi%20Hotel%20Seven%207%2C%20I%20want%20to%20book" target="_blank" rel="noopener">
+        WhatsApp Booking
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="about.html" class="hover:text-emerald-700 text-emerald-700">About</a>
+        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-700">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-700">Contact</a>
+      </nav>
+      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="px-4 py-3 space-y-3">
+        <a href="about.html" class="block">About</a>
+        <a href="rooms.html" class="block">Rooms</a>
+        <a href="gallery.html.html" class="block">Gallery</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="https://wa.me/923272583013?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl">Book on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="absolute inset-0">
+      <img src="hotel_images/hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative isolate max-w-7xl mx-auto px-4 py-32 md:py-40 flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Gallery</h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl">Explore the comfort, style, and hospitality of Hotel Seven 7 Karachi.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Hotel Gallery</h2>
+      <div id="gallery" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="hotel_images/hometop.jpg" alt="Hotel Entrance" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/newroom.jpg" alt="Modern Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/luxroom.jpg" alt="Deluxe Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/luxuryroom1.jpg" alt="Luxury Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/doublebedroom.jpg" alt="Double Bed Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/familysuite.jpg" alt="Family Suite" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/singlebadluxury.jpg" alt="Single Bed Luxury" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/acroom.jpg" alt="Standard AC Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/veranda.jpg" alt="Lobby Area" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/dining.jpg" alt="Dining Area" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/room1.jpg" alt="Room View 1" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/dining.jpg" alt="Room View 2" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="lightbox-close">✕</span>
+    <div class="lightbox-controls">
+      <span id="prev">‹</span>
+      <span id="next">›</span>
+    </div>
+    <img id="lightbox-img" src="" alt="Expanded view">
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
+      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline">Mehdi</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+
+    // Lightbox
+    const gallery = document.querySelectorAll('#gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let currentIndex = 0;
+
+    gallery.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+      lightboxImg.src = gallery[currentIndex].src;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % gallery.length;
+      lightboxImg.src = gallery[currentIndex].src;
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
+

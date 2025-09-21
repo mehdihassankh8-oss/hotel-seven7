@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Hotel Seven 7 Karachi</title>
+  <meta name="description" content="About Hotel Seven 7 Karachi – Family rooms, facilities, dining options, and location near Teen Talwar." />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth;}
+    .glass{backdrop-filter:saturate(140%) blur(10px);}
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .hover-scale:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+
+  <!-- Top bar -->
+  <div class="w-full bg-emerald-700 text-white text-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
+      <a class="underline flex items-center gap-2" href="https://wa.me/923272583013?text=Hi%20Hotel%20Seven%207%2C%20I%20want%20to%20book" target="_blank" rel="noopener">
+        WhatsApp Booking
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="about.html" class="hover:text-emerald-700 text-emerald-700">About</a>
+        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-700">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-700">Contact</a>
+      </nav>
+      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="px-4 py-3 space-y-3">
+        <a href="about.html" class="block">About</a>
+        <a href="rooms.html" class="block">Rooms</a>
+        <a href="gallery.html.html" class="block">Gallery</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="https://wa.me/923272583013?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl">Book on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img src="hotel_images/hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
+    </div>
+    <div class="relative isolate bg-black/40">
+      <div class="max-w-7xl mx-auto px-4 py-28 md:py-40 text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">About Us</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">Discover comfort, convenience, and warm hospitality at Hotel Seven 7 Karachi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Features -->
+  <section class="py-16 bg-slate-50 space-y-20">
+
+    <!-- About Section -->
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center fade-up">
+      <div class="rounded-2xl overflow-hidden shadow hover-scale">
+        <img src="hotel_images/newroom.jpg" alt="Hotel Seven 7 Room" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">About this property</h2>
+        <p class="text-slate-600 mb-3"><strong>Comfortable Accommodations:</strong> Hotel Seven 7 offers family rooms with private bathrooms, air-conditioning, and city views. Each room includes a balcony, refrigerator, and free toiletries.</p>
+        <p class="text-slate-600 mb-3"><strong>Exceptional Facilities:</strong> Relax in the garden or on the terrace. Free WiFi throughout. Hot tub, lounge, and outdoor seating available.</p>
+        <p class="text-slate-600 mb-3"><strong>Dining Options:</strong> Breakfast includes continental, vegetarian, halal, gluten-free, and Asian. On-site restaurant serves a variety of cuisines.</p>
+        <p class="text-slate-600"><strong>Convenient Location:</strong> Located 12 mi from Jinnah International Airport, near Teen Talwar. Free private parking. Highly rated for staff and location.</p>
+      </div>
+    </div>
+
+    <!-- Features & Benefits -->
+    <div class="max-w-7xl mx-auto px-4 space-y-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Why Guests Love Us</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale fade-up">
+          <svg class="mx-auto mb-4 h-12 w-12 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          <h3 class="text-xl font-semibold mb-2">Free WiFi</h3>
+          <p class="text-slate-600">Stay connected with high-speed internet throughout the hotel.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale fade-up">
+          <svg class="mx-auto mb-4 h-12 w-12 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4"/></svg>
+          <h3 class="text-xl font-semibold mb-2">Luxury Rooms</h3>
+          <p class="text-slate-600">Elegant, spacious rooms with modern amenities for your comfort.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale fade-up">
+          <svg class="mx-auto mb-4 h-12 w-12 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 12l9 4-9 4-9-4 9-4z"/></svg>
+          <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
+          <p class="text-slate-600">Friendly staff available around the clock for assistance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nearby Attractions -->
+    <div class="max-w-7xl mx-auto px-4 space-y-8 fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Nearby Attractions</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Teen Talwar</h3>
+          <p class="text-slate-600">Iconic Karachi landmark, only 5 minutes away from the hotel.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Clifton Beach</h3>
+          <p class="text-slate-600">Relax by the sea, 10 minutes drive from Hotel Seven 7.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Dolmen Mall</h3>
+          <p class="text-slate-600">Shopping and dining destination just 7 minutes away.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guest Reviews -->
+    <div class="max-w-7xl mx-auto px-4 space-y-8 fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Guest Reviews</h2>
+      <div class="space-y-6 max-w-4xl mx-auto">
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <div class="flex items-center mb-2">
+            <div class="rounded-full bg-emerald-700 text-white w-10 h-10 flex items-center justify-center font-semibold">A</div>
+            <div class="ml-3">
+              <p class="font-semibold">Ali Khan</p>
+              <p class="text-sm text-slate-500">★ ★ ★ ★ ★</p>
+            </div>
+          </div>
+          <p class="text-slate-600">"Amazing stay! Rooms were clean and staff was super friendly. Loved the breakfast selection."</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <div class="flex items-center mb-2">
+            <div class="rounded-full bg-emerald-700 text-white w-10 h-10 flex items-center justify-center font-semibold">S</div>
+            <div class="ml-3">
+              <p class="font-semibold">Sara Ahmed</p>
+              <p class="text-sm text-slate-500">★ ★ ★ ★ ★</p>
+            </div>
+          </div>
+          <p class="text-slate-600">"Perfect location near Teen Talwar, excellent WiFi, and very comfortable rooms. Highly recommend!"</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover-scale">
+          <div class="flex items-center mb-2">
+            <div class="rounded-full bg-emerald-700 text-white w-10 h-10 flex items-center justify-center font-semibold">R</div>
+            <div class="ml-3">
+              <p class="font-semibold">Rashid Malik</p>
+              <p class="text-sm text-slate-500">★ ★ ★ ★ ★</p>
+            </div>
+          </div>
+          <p class="text-slate-600">"Spacious family rooms with balconies, and staff went above and beyond to make our stay memorable."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Stay?</h2>
+      <p class="text-slate-600 mb-6">Experience comfort, convenience, and the warmth of Hotel Seven 7. Book directly on WhatsApp now!</p>
+      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-800 hover-scale transition">Book on WhatsApp</a>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
+      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://www.probsolv.online" class="underline">Mehdi</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+
+    // Scroll animations
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); appearOnScroll.unobserve(entry.target); }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
+

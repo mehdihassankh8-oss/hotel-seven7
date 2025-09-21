@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Seven 7 | Karachi</title>
+  <meta name="description" content="Hotel Seven 7 Karachi – rooms, facilities, gallery, and direct WhatsApp booking." />
+  <meta property="og:title" content="Hotel Seven 7" />
+  <meta property="og:description" content="Book rooms & banquets. Instant WhatsApp booking and support." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth;}
+    .glass{backdrop-filter:saturate(140%) blur(10px);}
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .hover-scale:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+
+  <!-- Top bar -->
+  <div class="w-full bg-emerald-700 text-white text-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
+      <a class="underline flex items-center gap-2" href="https://wa.me/923272583013?text=Hi%20Hotel%20Seven%207%2C%20I%20want%20to%20book" target="_blank" rel="noopener">
+        WhatsApp Booking
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
+      <nav class="hidden md:flex gap-6 font-medium">
+        <a href="about.html" class="hover:text-emerald-700">About</a>
+        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-700">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-700">Contact</a>
+      </nav>
+      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="px-4 py-3 space-y-3">
+        <a href="about.html" class="block">About</a>
+        <a href="rooms.html" class="block">Rooms</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="https://wa.me/923272583013?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl">Book on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative fade-up">
+    <div class="absolute inset-0">
+     <img src="hotel_images/hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative isolate max-w-7xl mx-auto px-4 py-32 md:py-40 flex flex-col items-center justify-center text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Welcome to Hotel Seven 7 Karachi</h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl">Enjoy comfortable rooms, excellent dining, and warm hospitality. Book instantly via WhatsApp.</p>
+      <div class="mt-6 flex flex-wrap gap-3 justify-center">
+        <a href="rooms.html" class="bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold hover-scale">View Rooms</a>
+        <a href="https://wa.me/923272583013?text=Hi%20Hotel%20Seven%207%2C%20please%20check%20availability%20for%20my%20dates" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 px-5 py-3 rounded-xl font-semibold hover-scale transition">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-slate-50 fade-up">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">About Hotel Seven 7</h2>
+        <p class="text-slate-600 mb-3">Nestled in the heart of Karachi, Hotel Seven 7 offers modern rooms, warm hospitality, and easy access to city landmarks. Enjoy comfort with a touch of elegance.</p>
+        <p class="text-slate-600">Located minutes away from Mohatta Palace and Karachi Cantt station, our hotel ensures a convenient stay with Wi-Fi, dining, and family-friendly accommodations.</p>
+      </div>
+      <div class="grid gap-4">
+        <img src="hotel_images/newroom.jpg" alt="Hotel Seven 7 Room" class="w-full h-64 object-cover rounded-xl shadow hover-scale" />
+        <img src="hotel_images/familysuite.jpg" alt="Hotel Seven 7 Lobby" class="w-full h-64 object-cover rounded-xl shadow hover-scale" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+  <section id="gallery" class="py-16 fade-up">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Gallery</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <img class="rounded-xl h-64 w-full object-cover hover-scale" src="hotel_images/singlebadluxury.jpg" alt="Hotel Exterior" />
+        <img class="rounded-xl h-64 w-full object-cover hover-scale" src="hotel_images/dining.jpg" alt="Dining Area" />
+        <img class="rounded-xl h-64 w-full object-cover hover-scale" src="hotel_images/room1.jpg" alt="Room 1" />
+      </div>
+      <div class="mt-6 text-center">
+        <a href="gallery.html" class="inline-block bg-emerald-700 text-white px-5 py-3 rounded-xl hover:bg-emerald-800 font-semibold hover-scale transition">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Preview -->
+  <section id="contact" class="py-16 bg-emerald-700 text-white fade-up">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact & Bookings</h2>
+        <p class="mt-2 text-emerald-100">For reservations & inquiries, message us on WhatsApp or call.</p>
+        <div class="mt-6 space-y-2 text-left">
+          <p><strong>Phone:</strong> +92 327 258 3013</p>
+          <p><strong>Email:</strong> hello@probsolv.online</p>
+          <p><strong>Address:</strong> Karachi, Pakistan</p>
+        </div>
+        <div class="mt-6 flex gap-3 justify-center md:justify-start">
+          <a target="_blank" href="https://wa.me/923272583013?text=Booking%20Inquiry%20-%20Hotel%20Seven%207" class="bg-white text-emerald-700 px-5 py-3 rounded-xl font-semibold hover-scale">WhatsApp Now</a>
+          <a href="rooms.html" class="border border-white px-5 py-3 rounded-xl hover-scale">View Rooms</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-900 text-slate-300 fade-up">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
+      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline">Mehdi</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+
+    // Scroll animations
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

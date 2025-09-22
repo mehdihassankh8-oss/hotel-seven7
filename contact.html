@@ -4,49 +4,74 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact & Booking | Hotel Seven 7 Karachi</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <meta name="description" content="Contact Hotel Seven 7 Karachi for bookings, inquiries, and instant WhatsApp reservations." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg,#0b1220 0%,#0d1428 60%,#0b1220 100%); color:white; }
     .glass { backdrop-filter: saturate(140%) blur(10px); }
-    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .hover-scale:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.05); transition: transform .3s ease; }
+    .hover-glow:hover { box-shadow:0 0 12px rgba(49,225,255,0.6),0 0 25px rgba(34,227,169,0.4); }
+    select option { color: black; background-color: white; }
   </style>
 </head>
-<body class="antialiased text-slate-800">
+<body class="antialiased">
 
-  <!-- Top Bar -->
-  <div class="w-full bg-emerald-700 text-white text-sm">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
-      <a class="underline flex items-center gap-2" href="https://wa.me/923272583013" target="_blank" rel="noopener">WhatsApp Booking</a>
+ <!-- Top Bar -->
+<div class="w-full bg-gradient-to-r from-emerald-700 to-emerald-600 text-white text-sm">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-2 gap-2 md:gap-0">
+    <p class="font-medium text-center md:text-left">
+      <strong>Hotel Seven 7 Karachi</strong> – Luxury, Comfort & Hospitality
+    </p>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1">
+        <i class="fas fa-star text-yellow-400"></i>
+        <span class="text-white font-semibold">4.3 / 5 (300+ Reviews)</span>
+      </div>
+      <a href="https://wa.me/923095158670" target="_blank" class="bg-white text-slate-900 px-4 py-1 rounded-full font-semibold hover:bg-gray-200 transition">
+        Book on WhatsApp
+      </a>
     </div>
   </div>
+</div>
 
-  <!-- Navigation -->
-  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
-      <nav class="hidden md:flex gap-6 font-medium">
-        <a href="about.html" class="hover:text-emerald-700">About</a>
-        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
-        <a href="gallery.html" class="hover:text-emerald-700">Gallery</a>
-        <a href="contact.html" class="hover:text-emerald-700 text-emerald-700">Contact</a>
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Hotel Seven 7 Logo" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
+      </a>
+      <nav class="hidden md:flex gap-6 font-medium text-white/80">
+        <a href="about.html" class="hover:text-emerald-400">About</a>
+        <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
+        <a href="contact.html" class="text-emerald-400">Contact</a>
       </nav>
-      <a href="https://wa.me/923272583013" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800 hover-scale">Book on WhatsApp</a>
-      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <a href="https://wa.me/923095158670" target="_blank" class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30" aria-label="Open menu">
+        <i class="fas fa-bars text-white text-xl"></i>
       </button>
     </div>
 
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-black/80 text-white">
       <div class="px-4 py-3 space-y-3">
         <a href="about.html" class="block">About</a>
         <a href="rooms.html" class="block">Rooms</a>
         <a href="gallery.html" class="block">Gallery</a>
-        <a href="contact.html" class="block">Contact</a>
-        <a href="https://wa.me/923272583013" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover-scale">Book on WhatsApp</a>
+        <a href="contact.html" class="block text-emerald-400">Contact</a>
+        <a href="https://wa.me/923095158670" target="_blank" class="inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
       </div>
     </div>
   </header>
@@ -57,107 +82,147 @@
       <img src="hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
-    <div class="relative isolate flex items-center justify-center py-32 md:py-40">
-      <div class="text-center text-white max-w-2xl px-4">
+    <div class="relative flex items-center justify-center py-32 md:py-40 text-center text-white px-4">
+      <div class="max-w-2xl">
         <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Contact & Booking</h1>
         <p class="mt-4 text-lg md:text-xl">Send us a booking request directly on WhatsApp. Hotel Seven 7 Karachi welcomes you.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Booking Section -->
-  <section id="contact" class="py-16 bg-slate-50 fade-up">
+  <!-- Contact & Booking -->
+  <section id="contact" class="py-16 fade-up">
     <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
 
-      <!-- Contact Details -->
+      <!-- Contact info -->
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center lg:text-left">Reach Us</h2>
-        <p class="text-slate-600 mb-6 text-center lg:text-left">We’re here to assist you with bookings, directions, and all inquiries.</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400 text-center lg:text-left">Reach Us</h2>
+        <p class="text-gray-300 mb-6 text-center lg:text-left">We’re here to assist you with bookings, directions, and all inquiries.</p>
         <div class="space-y-2 text-center lg:text-left">
-          <p><strong>Phone:</strong> +92 327 258 3013</p>
-          <p><strong>Email:</strong> hello@probsolv.online</p>
+          <p><strong>Phone:</strong> +923095158670</p>
+          <p><strong>Email:</strong> hotel@seven.com</p>
           <p><strong>Address:</strong> Karachi, Pakistan</p>
         </div>
         <div class="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
-          <a target="_blank" href="https://wa.me/923272583013" class="bg-emerald-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-800 hover-scale">WhatsApp Now</a>
-          <a href="rooms.html" class="border border-emerald-700 px-5 py-3 rounded-xl text-emerald-700 hover:bg-emerald-50 hover-scale">View Rooms</a>
+          <a target="_blank" href="https://wa.me/923095158670" class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">WhatsApp Now</a>
+          <a href="rooms.html" class="border border-white px-5 py-3 rounded-xl hover-scale hover-glow">View Rooms</a>
         </div>
-        <div class="mt-8 rounded-2xl overflow-hidden shadow hover-scale">
-          <!-- Google Map -->
+        <div class="rounded-2xl overflow-hidden shadow hover-scale mt-6">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1810.4454007757377!2d67.02413254823304!3d24.833407720796327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dc232fe75c5%3A0xb7d116aaf07914e2!2sHotel%20Seven%207!5e0!3m2!1sen!2s!4v1758393592903!5m2!1sen!2s" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
-      <!-- Booking Form -->
-      <div class="bg-white p-8 rounded-2xl shadow hover-scale">
-        <h3 class="text-2xl font-bold mb-6 text-center lg:text-left">Booking Request</h3>
+      <!-- Booking form -->
+      <div class="bg-black/40 backdrop-blur p-8 rounded-2xl shadow hover-scale">
+        <h3 class="text-2xl font-bold mb-6 text-emerald-400 text-center lg:text-left">Booking Request</h3>
         <form id="bookingForm" class="space-y-4">
           <div class="grid md:grid-cols-2 gap-4">
-            <input type="text" id="name" placeholder="Your Name" required class="w-full border rounded-lg px-4 py-3">
-            <input type="email" id="email" placeholder="Email Address" required class="w-full border rounded-lg px-4 py-3">
+            <input type="text" id="name" placeholder="Your Name" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
+            <input type="email" id="email" placeholder="Email Address" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
           </div>
-          <input type="tel" id="phone" placeholder="Phone Number" required class="w-full border rounded-lg px-4 py-3">
+          <input type="tel" id="phone" placeholder="Phone Number" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
           <div class="grid md:grid-cols-2 gap-4">
-            <input type="date" id="checkin" required class="w-full border rounded-lg px-4 py-3">
-            <input type="date" id="checkout" required class="w-full border rounded-lg px-4 py-3">
+            <input type="date" id="checkin" required min="<?= date('Y-m-d') ?>" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <input type="date" id="checkout" required min="<?= date('Y-m-d') ?>" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
           </div>
-          <select id="guests" required class="w-full border rounded-lg px-4 py-3">
-            <option value="">Select Guests</option>
+          <select id="roomType" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <option value="" disabled selected>Select Room</option>
+            <option value="Deluxe Room" class="text-black">Deluxe Room</option>
+            <option value="Family Room" class="text-black">Family Room</option>
+            <option value="Friends Room" class="text-black">Friends Room</option>
+            <option value="King Bedroom" class="text-black">King Bedroom</option>
+          </select>
+          <select id="guests" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <option value="" disabled selected>Select Guests</option>
             <option>1 Guest</option>
             <option>2 Guests</option>
             <option>3 Guests</option>
             <option>4+ Guests</option>
           </select>
-          <textarea id="message" rows="4" placeholder="Additional Requests" class="w-full border rounded-lg px-4 py-3"></textarea>
-          <button type="submit" class="w-full bg-emerald-700 text-white py-3 rounded-lg font-semibold hover:bg-emerald-800 hover-scale">Send via WhatsApp</button>
+          <textarea id="message" rows="4" placeholder="Additional Requests" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400"></textarea>
+          <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 hover-scale hover-glow">Send via WhatsApp</button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 bg-slate-900 text-slate-300 fade-up">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
-      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline">Mehdi</a></p>
+  <footer class="py-10 bg-black/80 text-gray-300 fade-up">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+      <!-- Hotel Info -->
+      <div>
+        <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
+        <p class="text-sm">A modern boutique hotel in Karachi offering comfort and hospitality at its best.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-semibold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
+          <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
+          <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
+        </ul>
+      </div>
+
+       <!-- Social Links -->
+      <div>
+        <h3 class="font-semibold text-white mb-3">Connect</h3>
+        <div class="flex gap-6 justify-center md:justify-start text-2xl">
+          <a href="https://www.facebook.com/hotelseven7karachi?mibextid=ZbWKwL" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/923095158670" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@hotelseven7karachi" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-sm border-t border-white/20 pt-4">
+      © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by 
+      <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline hover:text-emerald-400">Mehdi</a>
     </div>
   </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923095158670" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20b955] text-white p-4 rounded-full shadow-lg hover:scale-110 transition hover-glow">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
 
-  // Mobile menu toggle
-  const btn = document.getElementById('menuBtn');
-  const menu = document.getElementById('mobileMenu');
-  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-  // Fade-up on scroll
-  const faders = document.querySelectorAll('.fade-up');
-  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    // Fade animations
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, {threshold: 0.1, rootMargin: "0px 0px -50px 0px"});
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // WhatsApp booking form
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let phone = document.getElementById('phone').value;
+      let checkin = document.getElementById('checkin').value;
+      let checkout = document.getElementById('checkout').value;
+      let room = document.getElementById('roomType').value;
+      let guests = document.getElementById('guests').value;
+      let message = document.getElementById('message').value;
+
+      let whatsappMsg = encodeURIComponent(
+        `Hello Hotel Seven 7,\n\nI want to book a room.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nRoom: ${room}\nGuests: ${guests}\nMessage: ${message}`
+      );
+
+      let url = `https://wa.me/923095158670?text=${whatsappMsg}`;
+      window.open(url, '_blank');
     });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // WhatsApp booking form submission
-  document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let phone = document.getElementById('phone').value;
-    let checkin = document.getElementById('checkin').value;
-    let checkout = document.getElementById('checkout').value;
-    let guests = document.getElementById('guests').value;
-    let message = document.getElementById('message').value;
-
-    let whatsappMsg = `Hello Hotel Seven 7,%0A%0AI want to book a room.%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ACheck-in: ${checkin}%0ACheck-out: ${checkout}%0AGuests: ${guests}%0AMessage: ${message}`;
-    let url = `https://wa.me/923272583013?text=${whatsappMsg}`;
-    window.open(url, '_blank');
-  });
-</script>
-
+  </script>
 </body>
 </html>
-

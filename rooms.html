@@ -7,154 +7,425 @@
   <meta name="description" content="Explore Standard, Deluxe, and Family Suite rooms at Hotel Seven 7 Karachi." />
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    html{scroll-behavior:smooth;}
-    .glass{backdrop-filter:saturate(140%) blur(10px);}
-    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg, #0b1220 0%, #0d1428 60%, #0b1220 100%); color: white; }
+    .glass { backdrop-filter: saturate(140%) blur(10px); }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .hover-scale:hover { transform: scale(1.03); transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.05); transition: transform .3s ease; }
+    .hover-glow:hover { box-shadow: 0 0 12px rgba(49,225,255,0.6), 0 0 25px rgba(34,227,169,0.4); }
+
+    /* Carousel */
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform 0.9s cubic-bezier(.2,.9,.2,1); }
+    .slide { flex: 0 0 100%; height: 80vh; background-size: cover; background-position: center; }
+    .carousel-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+    .dots { display:flex; gap:0.5rem; justify-content:center; position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); z-index:30; }
+    .dot { width:10px; height:10px; border-radius:50%; background:#bbb; border:none; cursor:pointer; }
+    .dot.active { background:#10b981; }
   </style>
 </head>
-<body class="antialiased text-slate-800">
+<body class="antialiased">
 
-  <!-- Top bar -->
-  <div class="w-full bg-emerald-700 text-white text-sm">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
-      <a class="underline flex items-center gap-2" href="https://wa.me/923272583013?text=Hi%20Hotel%20Seven%207%2C%20I%20want%20to%20book" target="_blank" rel="noopener">
-        WhatsApp Booking
+<!-- Top Bar -->
+<div class="w-full bg-gradient-to-r from-emerald-700 to-emerald-600 text-white text-sm">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-2 gap-2 md:gap-0">
+    <p class="font-medium text-center md:text-left">
+      <strong>Hotel Seven 7 Karachi</strong> – Luxury, Comfort & Hospitality
+    </p>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1">
+        <i class="fas fa-star text-yellow-400"></i>
+        <span class="text-white font-semibold">4.3 / 5 (300+ Reviews)</span>
+      </div>
+      <a href="https://wa.me/923095158670" target="_blank" class="bg-white text-slate-900 px-4 py-1 rounded-full font-semibold hover:bg-gray-200 transition">
+        Book on WhatsApp
       </a>
     </div>
   </div>
+</div>
+
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+  <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
-      <nav class="hidden md:flex gap-6 font-medium">
-        <a href="about.html" class="hover:text-emerald-700 text-emerald-700">About</a>
-        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
-        <a href="gallery.html" class="hover:text-emerald-700">Gallery</a>
-        <a href="contact.html" class="hover:text-emerald-700">Contact</a>
+      <a href="index.html" class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</a>
+      <nav class="hidden md:flex gap-6 font-medium text-white/80">
+        <a href="about.html" class="hover:text-emerald-400">About</a>
+        <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-400">Contact</a>
       </nav>
-      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Book on WhatsApp</a>
-      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <a href="https://wa.me/923272583013?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30">
+        <i class="fa fa-bars text-white text-xl"></i>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-black/80 text-white">
       <div class="px-4 py-3 space-y-3">
         <a href="about.html" class="block">About</a>
         <a href="rooms.html" class="block">Rooms</a>
-        <a href="gallery.html.html" class="block">Gallery</a>
+        <a href="gallery.html" class="block">Gallery</a>
         <a href="contact.html" class="block">Contact</a>
-        <a href="https://wa.me/923272583013?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl">Book on WhatsApp</a>
+        <a href="https://wa.me/923272583013?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
       </div>
     </div>
   </header>
 
-
   <!-- Hero -->
   <section id="home" class="relative fade-up">
-    <div class="absolute inset-0">
-     <img src="hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-    <div class="relative isolate max-w-7xl mx-auto px-4 py-32 md:py-40 flex flex-col items-center justify-center text-center text-white">
-      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Our Rooms</h1>
-      <p class="mt-4 text-lg md:text-xl max-w-2xl">Choose from Standard, Deluxe, and Family Suites for your perfect stay at Hotel Seven 7.</p>
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="slide" style="background-image:url('hotel_images/hometop.jpg')"></div>
+        <div class="slide" style="background-image:url('hotel_images/dining.jpg')"></div>
+        <div class="slide" style="background-image:url('hotel_images/room2.jpg')"></div>
+        <div class="slide" style="background-image:url('hotel_images/newroom.jpg')"></div>
+      </div>
+      <div class="carousel-overlay"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold">Our Rooms</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-2xl">Choose from Standard, Deluxe, and Family Suites for your perfect stay.</p>
+      </div>
+      <div class="dots" id="carouselDots"></div>
     </div>
   </section>
 
-  <!-- Rooms Section -->
-  <section id="rooms" class="py-16 bg-slate-50 fade-up">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Explore Our Rooms</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+<section class="py-16 bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Rooms</h2>
 
-        <!-- Standard Room -->
-        <div class="rounded-2xl overflow-hidden shadow hover:shadow-lg hover-scale transition">
-          <img src="room1.jpg" alt="Standard Room" class="w-full h-64 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Standard Room</h3>
-            <p class="text-slate-600 mb-3">Cozy and comfortable, perfect for solo travelers or couples. Includes WiFi, AC, and private bathroom.</p>
-            <a href="https://wa.me/923272583013?text=Booking%20Standard%20Room%20Hotel Seven 7" target="_blank" class="text-emerald-700 font-semibold hover:underline">Book Now →</a>
-          </div>
-        </div>
-
-        <!-- Deluxe Room -->
-        <div class="rounded-2xl overflow-hidden shadow hover:shadow-lg hover-scale transition">
-          <img src="luxuriousroom.jpg" alt="Deluxe Room" class="w-full h-64 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Deluxe Room</h3>
-            <p class="text-slate-600 mb-3">Spacious with elegant interiors, city view, balcony, and premium facilities for extra comfort.</p>
-            <a href="https://wa.me/923272583013?text=Booking%20Deluxe%20Room%20Hotel Seven 7" target="_blank" class="text-emerald-700 font-semibold hover:underline">Book Now →</a>
-          </div>
-        </div>
-
-        <!-- Family Suite -->
-        <div class="rounded-2xl overflow-hidden shadow hover:shadow-lg hover-scale transition">
-          <img src="luxroom.jpg" alt="Family Suite" class="w-full h-64 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold mb-2 text-center md:text-left">Family Suite</h3>
-            <p class="text-slate-600 mb-3">Designed for families, offering multiple beds, lounge area, balcony, and top-tier amenities.</p>
-            <a href="https://wa.me/923272583013?text=Booking%20Family%20Suite%20Hotel Seven 7" target="_blank" class="text-emerald-700 font-semibold hover:underline">Book Now →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-emerald-700 text-white fade-up">
-    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-      <div class="text-center md:text-left">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact & Bookings</h2>
-        <p class="mt-2 text-emerald-100">For reservations & inquiries, message us on WhatsApp or call.</p>
-        <div class="mt-6 space-y-2 text-left">
-          <p><strong>Phone:</strong> +92 327 258 3013 (Bookings Desk)</p>
-          <p><strong>Email:</strong> hello@probsolv.online</p>
-          <p><strong>Address:</strong> Karachi, Pakistan</p>
-        </div>
-        <div class="mt-6 flex gap-3 justify-center md:justify-start">
-          <a target="_blank" href="https://wa.me/923272583013?text=Booking%20Inquiry%20-%20Hotel Seven 7" class="bg-white text-emerald-700 px-5 py-3 rounded-xl font-semibold hover-scale">WhatsApp Now</a>
-          <a href="rooms.html" class="border border-white px-5 py-3 rounded-xl hover-scale">View Rooms</a>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+       <!-- 1. Super King Bed Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/superiorkingroombed.jpg" alt="Super King Bed" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Luxurious Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Superior%20King%20Room%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
         </div>
       </div>
-      <div class="rounded-2xl overflow-hidden shadow hover-scale">
-        <!-- Google Maps Embed -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1810.4454007757377!2d67.02413254823304!3d24.833407720796327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dc232fe75c5%3A0xb7d116aaf07914e2!2sHotel%20Seven%207!5e0!3m2!1sen!2s!4v1758393592903!5m2!1sen!2s" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <!-- 2. Deluxe Twin Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/deluxetwinroom.jpg" alt="Deluxe Twin Room" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Deluxe Twin Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Deluxe%20Twin%20Room%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 3. Double Bed Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/luxuryroom4.jpg" alt="Double Bed Room" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Double Bed Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Double%20Room%20with%20Terrace%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 4. Family Suite -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/familysuite.jpg" alt="Family Suite" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Family Suite</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Family%20Suite%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 5. Super Family Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/twindoublebedroom.jpg" alt="Super Family Room" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Super Family Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Superior%20Family%20Room%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 6. Super King Room Bed -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/luxroom2.jpg" alt="Superior King Room Bed" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Superior King Bed Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Superior%20King%20Room%20Bed%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 7. Luxurious Bed Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/newroom.jpg" alt="Bed " class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Luxurious Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Queen%20Bed%20Room%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 8. Luxury Room -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/nightview.jpg" alt="Luxury Room" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Luxury Room</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Luxury%20Room%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+      <!-- 9. Twin Double Bedroom -->
+      <div class="rounded-2xl overflow-hidden shadow hover-scale hover-glow transition bg-black/40">
+        <img src="hotel_images/nightview1.jpg" alt="Twin Double Bedroom" class="w-full h-64 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-3 text-center">Twin Double Bedroom</h3>
+          <ul class="text-sm space-y-1 mb-4 text-gray-300">
+            <li><i class="fas fa-wifi mr-2"></i>Free Wifi</li>
+            <li><i class="fas fa-parking mr-2"></i>Free parking</li>
+            <li><i class="fas fa-shuttle-van mr-2"></i>Airport shuttle</li>
+            <li><i class="fas fa-concierge-bell mr-2"></i>Room service</li>
+            <li><i class="fas fa-smoking-ban mr-2"></i>Non-smoking</li>
+            <li><i class="fas fa-users mr-2"></i>Family rooms</li>
+            <li><i class="fas fa-coffee mr-2"></i>Breakfast</li>
+          </ul>
+          <a href="https://wa.me/923095158670?text=Booking%20Twin%20Double%20Bedroom%20Hotel%20Seven%207" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 w-full block text-center py-2 rounded-lg font-semibold">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- Amenities Section -->
+<section class="py-16 bg-gradient-to-b from-black/80 to-black text-gray-200 fade-up">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-white mb-12">Hotel Amenities</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <!-- Free Wifi -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-wifi text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Free Wifi</h4>
+        <p class="text-sm text-gray-400">Stay connected everywhere in the hotel.</p>
+      </div>
+
+      <!-- Free Parking -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-parking text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Free Parking</h4>
+        <p class="text-sm text-gray-400">Secure on-site parking for all guests.</p>
+      </div>
+
+      <!-- Airport Shuttle -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-shuttle-van text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Airport Shuttle</h4>
+        <p class="text-sm text-gray-400">Convenient transfers for a hassle-free trip.</p>
+      </div>
+
+      <!-- Room Service -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-concierge-bell text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Room Service</h4>
+        <p class="text-sm text-gray-400">Enjoy meals and services in your room.</p>
+      </div>
+
+      <!-- Non-smoking Rooms -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-smoking-ban text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Non-smoking Rooms</h4>
+        <p class="text-sm text-gray-400">Breathe fresh and stay healthy.</p>
+      </div>
+
+      <!-- Family Rooms -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-users text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Family Rooms</h4>
+        <p class="text-sm text-gray-400">Spacious options for the whole family.</p>
+      </div>
+
+      <!-- Breakfast -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-coffee text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Breakfast</h4>
+        <p class="text-sm text-gray-400">Start your day with a fresh morning meal.</p>
+      </div>
+
+      <!-- 24/7 Reception -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-clock text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">24/7 Reception</h4>
+        <p class="text-sm text-gray-400">Always available to serve your needs.</p>
+      </div>
+
+      <!-- Private Bathrooms -->
+      <div class="rounded-2xl bg-black/40 shadow hover-scale hover-glow p-6 transition flex flex-col items-center text-center">
+        <i class="fas fa-bath text-4xl text-emerald-400 mb-3"></i>
+        <h4 class="font-semibold text-white">Private Bathrooms</h4>
+        <p class="text-sm text-gray-400">Modern, clean bathrooms with essentials.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Footer -->
+<footer class="py-10 bg-black/80 text-gray-300 fade-up">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+    <!-- Hotel Info -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
+      <p class="text-sm">A modern boutique hotel in Karachi offering comfort and hospitality at its best.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
+        <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
+        <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
+      </ul>
+    </div>
+
+     <!-- Social Links -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Connect</h3>
+      <div class="flex gap-6 justify-center md:justify-start text-2xl">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/hotelseven7karachi?mibextid=ZbWKwL" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/923095158670" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/hotelseven7karachi" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@hotelseven7karachi" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-tiktok"></i>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-slate-900 text-slate-300 fade-up">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
-      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline">Mehdi</a></p>
     </div>
-  </footer>
-  
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+  </div>
 
-    // Fade-up on scroll
-    const faders = document.querySelectorAll('.fade-up');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
-</script>
+  <!-- Bottom Bar -->
+  <div class="mt-8 text-center text-sm border-t border-white/20 pt-4">
+    © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by 
+    <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline hover:text-emerald-400">Mehdi</a>
+  </div>
+</footer>
+
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923095158670" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20b955] text-white p-4 rounded-full shadow-lg hover:scale-110 transition hover-glow">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    // Fade-in
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+    },{threshold:0.2});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+
+    // Carousel
+    const track=document.getElementById('carouselTrack'); const dotsContainer=document.getElementById('carouselDots');
+    const slides=document.querySelectorAll('.slide'); let idx=0;
+    slides.forEach((_,i)=>{let d=document.createElement('button'); d.classList.add('dot'); if(i===0)d.classList.add('active'); d.addEventListener('click',()=>{idx=i;updateCarousel();}); dotsContainer.appendChild(d);});
+    const dots=document.querySelectorAll('.dot');
+    function updateCarousel(){track.style.transform=`translateX(-${idx*100}%)`;dots.forEach((dot,i)=>dot.classList.toggle('active',i===idx));}
+    setInterval(()=>{idx=(idx+1)%slides.length;updateCarousel();},5000);
+  </script>
 </body>
 </html>
+
 
 
 

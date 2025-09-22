@@ -5,103 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery | Hotel Seven 7 Karachi</title>
   <meta name="description" content="Explore the gallery of Hotel Seven 7 Karachi – rooms, suites, dining, and amenities." />
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_three_star_icon.svg" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html{scroll-behavior:smooth}
-    .glass{backdrop-filter:saturate(140%) blur(10px);}
-    /* Lightbox styles */
-    #lightbox {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      flex-direction: column;
-      padding: 20px;
-    }
-    #lightbox-img {
-      max-width: 90%;
-      max-height: 70%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    }
-    #lightbox-caption {
-      color: #fff;
-      margin-top: 15px;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    .lightbox-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      user-select: none;
-      padding: 0 20px;
-    }
-    .lightbox-controls span {
-      cursor: pointer;
-      background: rgba(0,0,0,0.5);
-      padding: 10px 16px;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-    .lightbox-controls span:hover { background: rgba(0,0,0,0.8); }
-    #lightbox-close {
-      position: absolute;
-      top: 20px; right: 30px;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      background: rgba(0,0,0,0.5);
-      padding: 6px 12px;
-      border-radius: 8px;
-    }
-    #lightbox-close:hover { background: rgba(0,0,0,0.8); }
+    html { scroll-behavior:smooth; }
+    body { background:linear-gradient(180deg,#0b1220 0%,#0d1428 60%,#0b1220 100%); color:white; }
+    .glass { backdrop-filter:saturate(140%) blur(10px); }
+    .fade-up { opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+    .hover-scale { transition:transform .3s ease; }
+    .hover-scale:hover { transform:scale(1.05); }
+    .hover-glow:hover { box-shadow:0 0 12px rgba(49,225,255,0.6),0 0 25px rgba(34,227,169,0.4); }
+    /* Lightbox */
+    #lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.9); z-index:1000; }
+    #lightbox-img { max-width:90%; max-height:80%; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.8); }
+    .lightbox-controls { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; transform:translateY(-50%); color:white; font-size:2rem; font-weight:bold; user-select:none; padding:0 20px; }
+    .lightbox-controls span { cursor:pointer; background:rgba(0,0,0,0.5); padding:10px 16px; border-radius:8px; transition:background .2s; }
+    .lightbox-controls span:hover { background:rgba(0,0,0,0.8); }
+    #lightbox-close { position:absolute; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer; background:rgba(0,0,0,0.5); padding:6px 12px; border-radius:8px; }
+    #lightbox-close:hover { background:rgba(0,0,0,0.8); }
   </style>
 </head>
-<body class="antialiased text-slate-800">
+<body class="antialiased">
 
-  <!-- Top bar -->
-  <div class="w-full bg-emerald-700 text-white text-sm">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-      <p>Welcome to Hotel Seven 7 – Comfort in Karachi</p>
-      <a class="underline flex items-center gap-2" href="https://wa.me/923095158670?text=Hi%20Hotel%20Seven%207%2C%20I%20want%20to%20book" target="_blank" rel="noopener">
-        WhatsApp Booking
+<!-- Top Bar -->
+<div class="w-full bg-gradient-to-r from-emerald-700 to-emerald-600 text-white text-sm">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-2 gap-2 md:gap-0">
+    <p class="font-medium text-center md:text-left">
+      <strong>Hotel Seven 7 Karachi</strong> – Luxury, Comfort & Hospitality
+    </p>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1">
+        <i class="fas fa-star text-yellow-400"></i>
+        <span class="text-white font-semibold">4.3 / 5 (300+ Reviews)</span>
+      </div>
+      <a href="https://wa.me/923095158670" target="_blank" class="bg-white text-slate-900 px-4 py-1 rounded-full font-semibold hover:bg-gray-200 transition">
+        Book on WhatsApp
       </a>
     </div>
   </div>
+</div>
+
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-40 bg-white/70 glass border-b border-slate-200">
+  <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-xl tracking-tight">Hotel Seven 7</a>
-      <nav class="hidden md:flex gap-6 font-medium">
-        <a href="about.html" class="hover:text-emerald-700">About</a>
-        <a href="rooms.html" class="hover:text-emerald-700">Rooms</a>
-        <a href="gallery.html" class="text-emerald-700 font-semibold">Gallery</a>
-        <a href="contact.html" class="hover:text-emerald-700">Contact</a>
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Hotel Seven 7 Logo" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
+      </a>
+      <nav class="hidden md:flex gap-6 font-medium text-white/80">
+        <a href="about.html" class="hover:text-emerald-400">About</a>
+        <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+        <a href="gallery.html" class="text-emerald-400 font-semibold">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-400">Contact</a>
       </nav>
-      <a href="https://wa.me/923095158670?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Book on WhatsApp</a>
-      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-slate-100" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <a href="https://wa.me/923095158670?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Hotel%20Seven%207" target="_blank" class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-black/80 text-white">
       <div class="px-4 py-3 space-y-3">
         <a href="about.html" class="block">About</a>
         <a href="rooms.html" class="block">Rooms</a>
-        <a href="gallery.html" class="block">Gallery</a>
+        <a href="gallery.html" class="block text-emerald-400 font-semibold">Gallery</a>
         <a href="contact.html" class="block">Contact</a>
-        <a href="https://wa.me/923095158670?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-xl">Book on WhatsApp</a>
+        <a href="https://wa.me/923095158670?text=Booking%20inquiry%20for%20Hotel%20Seven%207" target="_blank" class="inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
       </div>
     </div>
   </header>
@@ -109,37 +79,37 @@
   <!-- Hero -->
   <section class="relative">
     <div class="absolute inset-0">
-      <img src="hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
-      <div class="absolute inset-0 bg-black/40"></div>
+      <img src="hotel_images/hometop.jpg" class="w-full h-full object-cover object-bottom" alt="Hotel Seven 7 Exterior">
+      <div class="absolute inset-0 bg-black/50"></div>
     </div>
-    <div class="relative isolate max-w-7xl mx-auto px-4 py-32 md:py-40 flex flex-col items-center justify-center text-center text-white">
+    <div class="relative max-w-7xl mx-auto px-4 py-32 md:py-40 flex flex-col items-center text-center text-white">
       <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Gallery</h1>
       <p class="mt-4 text-lg md:text-xl max-w-2xl">Explore the comfort, style, and hospitality of Hotel Seven 7 Karachi.</p>
     </div>
   </section>
 
   <!-- Gallery Grid -->
-  <section class="py-16 bg-slate-50">
+  <section class="py-16 fade-up">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Hotel Gallery</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-emerald-400">Hotel Gallery</h2>
       <div id="gallery" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="hometop.jpg" alt="Hotel Entrance" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="newroom.jpg" alt="Modern Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="luxroom.jpg" alt="Deluxe Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="luxuryroom1.jpg" alt="Luxury Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="doublebedroom.jpg" alt="Double Bed Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="familysuite.jpg" alt="Family Suite" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="singlebadluxury.jpg" alt="Single Bed Luxury" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="acroom.jpg" alt="Standard AC Room" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="veranda.jpg" alt="Lobby Area" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="dining.jpg" alt="Dining Area" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="room1.jpg" alt="Room View 1" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
-        <img src="dining.jpg" alt="Room View 2" class="rounded-xl h-64 w-full object-cover shadow cursor-pointer" />
+        <img src="hotel_images/hometop.jpg" alt="Hotel Entrance" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/newroom.jpg" alt="Modern Room" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/luxroom.jpg" alt="Deluxe Room" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/luxuryroom1.jpg" alt="Luxury Room" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/doublebedroom.jpg" alt="Double Bed Room" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/familysuite.jpg" alt="Family Suite" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/singlebadluxury.jpg" alt="Single Bed Luxury" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/acroom.jpg" alt="Standard AC Room" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/veranda.jpg" alt="Lobby Area" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/dining.jpg" alt="Dining Area" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/room1.jpg" alt="Room View 1" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
+        <img src="hotel_images/dining.jpg" alt="Room View 2" class="rounded-xl h-64 w-full object-cover shadow hover-scale hover-glow cursor-pointer fade-up" />
       </div>
     </div>
   </section>
 
-  <!-- Lightbox Slideshow -->
+  <!-- Lightbox -->
   <div id="lightbox">
     <span id="lightbox-close">✕</span>
     <div class="lightbox-controls">
@@ -147,63 +117,126 @@
       <span id="next">›</span>
     </div>
     <img id="lightbox-img" src="" alt="Expanded view">
-    <p id="lightbox-caption"></p>
   </div>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-slate-900 text-slate-300">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© <span id="year"></span> Hotel Seven 7. All rights reserved.</p>
-      <p class="text-sm">Demo website crafted by ProbSolv – <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline">Mehdi</a></p>
+<!-- Footer -->
+<footer class="py-10 bg-black/80 text-gray-300 fade-up">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
+    <!-- Hotel Info -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
+      <p class="text-sm">A modern boutique hotel in Karachi offering comfort and hospitality at its best.</p>
     </div>
-  </footer>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
+        <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
+        <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
+      </ul>
+    </div>
+
+     <!-- Social Links -->
+    <div>
+      <h3 class="font-semibold text-white mb-3">Connect</h3>
+      <div class="flex gap-6 justify-center md:justify-start text-2xl">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/hotelseven7karachi?mibextid=ZbWKwL" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/923095158670" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/hotelseven7karachi" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@hotelseven7karachi" 
+           target="_blank" class="hover:text-emerald-400 hover-glow">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-8 text-center text-sm border-t border-white/20 pt-4">
+    © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by 
+    <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline hover:text-emerald-400">Mehdi</a>
+  </div>
+</footer>
+
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923095158670" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20b955] text-white p-4 rounded-full shadow-lg hover:scale-110 transition hover-glow">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    // Mobile menu
+    const btn=document.getElementById('menuBtn');
+    const menu=document.getElementById('mobileMenu');
+    btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
 
-    // Lightbox slideshow with captions
-    const gallery = document.querySelectorAll('#gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const caption = document.getElementById('lightbox-caption');
-    const closeBtn = document.getElementById('lightbox-close');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    let currentIndex = 0;
+    // Lightbox
+    const gallery=document.querySelectorAll('#gallery img');
+    const lightbox=document.getElementById('lightbox');
+    const lightboxImg=document.getElementById('lightbox-img');
+    const closeBtn=document.getElementById('lightbox-close');
+    const prevBtn=document.getElementById('prev');
+    const nextBtn=document.getElementById('next');
+    let currentIndex=0;
 
-    function showSlide(index) {
-      currentIndex = (index + gallery.length) % gallery.length;
-      lightboxImg.src = gallery[currentIndex].src;
-      caption.textContent = gallery[currentIndex].alt;
-    }
-
-    gallery.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        showSlide(index);
+    gallery.forEach((img,index)=>{
+      img.addEventListener('click',()=>{
+        currentIndex=index;
+        lightboxImg.src=img.src;
+        lightbox.style.display='flex';
       });
     });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
+    closeBtn.addEventListener('click',()=>lightbox.style.display='none');
+    prevBtn.addEventListener('click',()=>{
+      currentIndex=(currentIndex-1+gallery.length)%gallery.length;
+      lightboxImg.src=gallery[currentIndex].src;
     });
-
-    prevBtn.addEventListener('click', () => {
-      showSlide(currentIndex - 1);
+    nextBtn.addEventListener('click',()=>{
+      currentIndex=(currentIndex+1)%gallery.length;
+      lightboxImg.src=gallery[currentIndex].src;
     });
+    lightbox.addEventListener('click',(e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
 
-    nextBtn.addEventListener('click', () => {
-      showSlide(currentIndex + 1);
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) lightbox.style.display = 'none';
-    });
+    // Scroll animations
+    const faders=document.querySelectorAll('.fade-up');
+    const appearOptions={threshold:0.1,rootMargin:"0px 0px -50px 0px"};
+    const appearOnScroll=new IntersectionObserver((entries,observer)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },appearOptions);
+    faders.forEach(fader=>appearOnScroll.observe(fader));
   </script>
 </body>
 </html>
+
+
+
+

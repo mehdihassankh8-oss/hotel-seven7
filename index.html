@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hotel Seven 7 Karachi | Luxury Stay & Comfort</title>
-  <meta name="description" content="Hotel Seven 7 Karachi offers modern rooms, family suites, and warm hospitality. Book instantly via WhatsApp." />
+  <title>Hotel Seven 7 Karachi | Luxury & Comfort</title>
+  <meta name="description" content="Hotel Seven 7 Karachi – Luxury, Comfort & Hospitality with instant WhatsApp bookings." />
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -21,26 +21,10 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     .hover-scale:hover { transform: scale(1.05); transition: transform .3s ease; }
     .hover-glow:hover { box-shadow:0 0 12px rgba(49,225,255,0.6),0 0 25px rgba(34,227,169,0.4); }
-
-    /* Carousel */
-    .carousel { position: relative; overflow: hidden; height: 80vh; }
-    .carousel-images {
-      display: flex; width: 300%;
-      transition: transform 1s ease-in-out;
-    }
-    .carousel-images img {
-      width: 100%; flex-shrink: 0;
-      object-fit: cover;
-      height: 80vh;
-    }
-    .carousel-overlay {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-    @media(max-width:768px){
-      .carousel { height: 60vh; }
-      .carousel-images img { height: 60vh; }
-    }
+    .carousel { overflow: hidden; position: relative; }
+    .carousel-images { display: flex; transition: transform 1s ease-in-out; width: 100%; }
+    .carousel-images img { flex: 0 0 100%; width: 100%; height: 90vh; object-fit: cover; }
+    #benefits img { width: 100%; height: 100%; object-fit: cover; }
   </style>
 </head>
 <body class="antialiased">
@@ -67,14 +51,15 @@
   <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
-        <img src="logo.png" alt="Hotel Seven 7 Logo" class="h-10 w-auto">
+        <!-- Make sure logo.png is inside same folder as this index.html -->
+        <img src="./logo.png" alt="Hotel Seven 7 Logo" class="h-12 w-auto object-contain">
         <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
       </a>
       <nav class="hidden md:flex gap-6 font-medium text-white/80">
-        <a href="#about" class="hover:text-emerald-400">About</a>
-        <a href="#benefits" class="hover:text-emerald-400">Benefits</a>
-        <a href="#gallery" class="hover:text-emerald-400">Gallery</a>
-        <a href="#contact" class="text-emerald-400">Contact</a>
+        <a href="about.html" class="hover:text-emerald-400">About</a>
+        <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-400">Contact</a>
       </nav>
       <a href="https://wa.me/923095158670" target="_blank" class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
       <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30" aria-label="Open menu">
@@ -85,10 +70,10 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-black/80 text-white">
       <div class="px-4 py-3 space-y-3">
-        <a href="#about" class="block">About</a>
-        <a href="#benefits" class="block">Benefits</a>
-        <a href="#gallery" class="block">Gallery</a>
-        <a href="#contact" class="block text-emerald-400">Contact</a>
+        <a href="about.html" class="block">About</a>
+        <a href="rooms.html" class="block">Rooms</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="contact.html" class="block">Contact</a>
         <a href="https://wa.me/923095158670" target="_blank" class="inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
       </div>
     </div>
@@ -101,12 +86,11 @@
       <img src="newroom.jpg" alt="Luxury Room">
       <img src="familysuite.jpg" alt="Family Suite">
     </div>
-    <div class="carousel-overlay"></div>
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
       <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Welcome to Hotel Seven 7 Karachi</h1>
       <p class="mt-4 text-lg md:text-xl max-w-2xl">Enjoy comfortable rooms, excellent dining, and warm hospitality. Book instantly via WhatsApp.</p>
       <div class="mt-6 flex flex-wrap gap-3 justify-center">
-        <a href="#about" class="bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold hover-scale">View Rooms</a>
+        <a href="rooms.html" class="bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold hover-scale">View Rooms</a>
         <a href="https://wa.me/923095158670?text=Hi%20Hotel%20Seven%207%2C%20please%20check%20availability%20for%20my%20dates" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 px-5 py-3 rounded-xl font-semibold hover-scale hover-glow">Check Availability</a>
       </div>
     </div>
@@ -212,36 +196,7 @@
     </div>
   </section>
 
- <!-- Footer -->
-<footer class="py-10 bg-black/80 text-gray-300 fade-up">
-  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
-    <div>
-      <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
-      <p class="text-sm">A modern boutique hotel in Karachi offering comfort and hospitality at its best.</p>
-    </div>
-    <div>
-      <h3 class="font-semibold text-white mb-3">Quick Links</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#about" class="hover:text-emerald-400">About</a></li>
-        <li><a href="#benefits" class="hover:text-emerald-400">Benefits</a></li>
-        <li><a href="#gallery" class="hover:text-emerald-400">Gallery</a></li>
-        <li><a href="#contact" class="hover:text-emerald-400">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-semibold text-white mb-3">Connect</h3>
-      <div class="flex gap-6 justify-center md:justify-start text-2xl">
-        <a href="https://www.facebook.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-facebook"></i></a>
-        <a href="https://wa.me/923095158670" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@hotelseven7karachi" target="_blank" class="hover:text-emerald-400 hover-glow"><i class="fab fa-tiktok"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="mt-8 text-center text-sm border-t border-white/20 pt-4">
-    © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by 
-    <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline hover:text-emerald-400">Mehdi</a>
-  </div>
+  
 </<!-- Footer -->
 <footer class="py-10 bg-black/80 text-gray-300 fade-up">
   <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
@@ -328,6 +283,7 @@
   </script>
 </body>
 </html>
+
 
 
 

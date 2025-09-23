@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facilities | Hotel Seven 7 Karachi</title>
+  <meta name="description" content="Facilities at Hotel Seven 7 Karachi – explore free WiFi, airport shuttle, dining, family-friendly rooms, safety, spa, and more." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg,#0b1220 0%,#0d1428 60%,#0b1220 100%); color:white; }
+    .glass { backdrop-filter: saturate(140%) blur(10px); }
+    .fade-up { opacity:0; transform:translateY(30px); transition:opacity .8s ease,transform .8s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+    .facility-card { background:rgba(0,0,0,0.5); padding:1.5rem; border-radius:1rem; }
+    .hover-scale:hover { transform:scale(1.05); transition:transform .3s ease; }
+    .hover-glow:hover { box-shadow:0 0 12px rgba(49,225,255,0.6),0 0 25px rgba(34,227,169,0.4); }
+  </style>
+</head>
+<body class="antialiased">
+
+ <!-- Top Bar -->
+<div class="w-full bg-gradient-to-r from-emerald-700 to-emerald-600 text-white text-sm">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-2 gap-2 md:gap-0">
+    <p class="font-medium text-center md:text-left">
+      <strong>Hotel Seven 7 Karachi</strong> – Luxury, Comfort & Hospitality
+    </p>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1">
+        <i class="fas fa-star text-yellow-400"></i>
+        <span class="text-white font-semibold">4.3 / 5 (300+ Reviews)</span>
+      </div>
+      <a href="https://wa.me/923095158670" target="_blank" class="bg-white text-slate-900 px-4 py-1 rounded-full font-semibold hover:bg-gray-200 transition">
+        Book on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <!-- Make sure logo.png is inside same folder as this index.html -->
+        <img src="./logo.png" alt="Hotel Seven 7 Logo" class="h-12 w-auto object-contain">
+        <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
+      </a>
+      <nav class="hidden md:flex gap-6 font-medium text-white/80">
+        <a href="about.html" class="hover:text-emerald-400">About</a>
+        <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+        <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
+        <a href="facilities.html" class="hover:text-emerald-400">Facilities</a>
+        <a href="locations.html" class="hover:text-emerald-400">Our Locations</a>
+        <a href="contact.html" class="hover:text-emerald-400">Contact</a>
+      </nav>
+      <a href="https://wa.me/923095158670" target="_blank" class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30" aria-label="Open menu">
+        <i class="fas fa-bars text-white text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/20 bg-black/80 text-white">
+      <div class="px-4 py-3 space-y-3">
+        <a href="about.html" class="block">About</a>
+        <a href="rooms.html" class="block">Rooms</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="facilities.html" class="block">Facilities</a>
+        <a href="locations.html" class="block">Our Locations</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="https://wa.me/923095158670" target="_blank" class="inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ Hero -->
+  <section class="relative fade-up">
+    <img src="hometop.jpg" alt="Facilities Hero Image" class="w-full h-[70vh] object-cover">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">Facilities</h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl text-gray-200">Discover everything Hotel Seven 7 Karachi offers for your comfort and convenience.</p>
+    </div>
+  </section>
+
+<!-- Facilities Grid -->
+<section class="py-20 fade-up">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emerald-400">Facilities at Hotel Seven 7</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Most Popular -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-star text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Great For Your Stay</h3>
+        <p class="text-sm text-gray-300">Free WiFi, airport shuttle, free parking, non-smoking rooms, family rooms, and breakfast.</p>
+      </div>
+
+      <!-- Parking -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-parking text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Parking</h3>
+        <p class="text-sm text-gray-300">Private on-site parking, valet service, accessible parking, and garage available.</p>
+      </div>
+
+      <!-- Outdoors -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-tree text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Outdoors</h3>
+        <p class="text-sm text-gray-300">Terrace, garden, outdoor furniture, and BBQ facilities for relaxation and gatherings.</p>
+      </div>
+
+      <!-- Kitchen -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-blender text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Kitchen</h3>
+        <p class="text-sm text-gray-300">Guests can access a fully equipped shared kitchen for convenient meal preparation.</p>
+      </div>
+
+      <!-- Food & Drink -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-utensils text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Food & Drink</h3>
+        <p class="text-sm text-gray-300">Breakfast in-room, fruit, and special diet meals on request (extra charges may apply).</p>
+      </div>
+
+      <!-- Internet -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-wifi text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Internet</h3>
+        <p class="text-sm text-gray-300">High-speed WiFi available in all areas, free of charge for guests.</p>
+      </div>
+
+      <!-- Front Desk -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-concierge-bell text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Front Desk Services</h3>
+        <p class="text-sm text-gray-300">24-hour reception, tour desk, currency exchange, lockers, and express check-in/out.</p>
+      </div>
+
+      <!-- Cleaning -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-broom text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Cleaning Services</h3>
+        <p class="text-sm text-gray-300">Daily housekeeping, laundry, ironing, dry cleaning, and suit press (extra charge).</p>
+      </div>
+
+      <!-- Business -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-briefcase text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Business Facilities</h3>
+        <p class="text-sm text-gray-300">Professional fax and photocopying services available on request.</p>
+      </div>
+
+      <!-- Safety & Security -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-lock text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Safety & Security</h3>
+        <p class="text-sm text-gray-300">CCTV surveillance, smoke alarms, fire extinguishers, and 24-hour security.</p>
+      </div>
+
+      <!-- General -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-hotel text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">General</h3>
+        <p class="text-sm text-gray-300">Air conditioning, car rental, shuttle service, hypoallergenic rooms, and shared lounge.</p>
+      </div>
+
+      <!-- Spa & Wellness -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-spa text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Spa & Wellness</h3>
+        <p class="text-sm text-gray-300">Guests can enjoy the relaxing hot tub and Jacuzzi facilities.</p>
+      </div>
+
+      <!-- Languages -->
+      <div class="bg-black/50 p-8 rounded-2xl shadow hover-scale hover-glow">
+        <i class="fas fa-language text-4xl text-emerald-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Languages Spoken</h3>
+        <p class="text-sm text-gray-300">Our team speaks English and Urdu to assist international guests.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ✅ CTA (same as index style) -->
+  <section class="py-16 bg-gradient-to-r from-emerald-700 to-emerald-500 text-white text-center fade-up">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">📲 Book Your Stay Now</h2>
+    <p class="mb-6 max-w-2xl mx-auto">Reserve instantly via WhatsApp and enjoy a seamless stay with comfort, safety, and world-class service.</p>
+    <a href="https://wa.me/923095158670" target="_blank" class="inline-block bg-black/70 hover:bg-black px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg hover-glow">Book on WhatsApp</a>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="py-10 bg-black/80 text-gray-300 fade-up">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
+        <p class="text-sm">A boutique hotel in Karachi offering comfort and hospitality at its best.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
+          <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
+          <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li
+          <li><a href="gallery.html" class="hover:text-emerald-400">Facilities</a></li>
+          <li><a href="locations.html" class="hover:text-emerald-400">Our Locations</a></li>
+          <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
+        </ul>
+      </div?
+      <div>
+        <h3 class="font-semibold text-white mb-3">Connect</h3>
+        <div class="flex gap-6 text-2xl">
+          <a href="https://facebook.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/923095158670" target="_blank" class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com/@hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-sm border-t border-white/20 pt-4">
+      © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by <a href="https://probsolv-ai-site-5z9s.vercel.app/" class="underline hover:text-emerald-400">Mehdi</a>
+    </div>
+  </footer>
+
+  <script>
+    // ✅ Footer year auto-update
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ✅ Scroll fade-up animation
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOnScroll = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    });
+    faders.forEach(f => appearOnScroll.observe(f));
+
+    // ✅ Mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuIcon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      menuIcon.classList.toggle("fa-bars");
+      menuIcon.classList.toggle("fa-times");
+    });
+  </script>
+
+</body>
+</html>

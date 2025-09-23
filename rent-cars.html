@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rent a Car | Hotel Seven 7 Karachi</title>
+  <meta name="description" content="Rent a car service at Hotel Seven 7 Karachi – luxury, comfort & reliable travel solutions with instant booking." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg,#0b1220 0%,#0d1428 60%,#0b1220 100%); color:white; }
+    .glass { backdrop-filter: saturate(140%) blur(10px); }
+    .fade-up { opacity:0; transform:translateY(30px); transition:opacity .8s ease,transform .8s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+    .card { background:rgba(0,0,0,0.55); padding:1.5rem; border-radius:1rem; }
+    .hover-scale:hover { transform:scale(1.03); transition:transform .3s ease; }
+    .hover-glow:hover { box-shadow:0 0 12px rgba(49,225,255,0.6),0 0 25px rgba(34,227,169,0.4); }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ✅ Navbar (same as other pages) -->
+<header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="./logo.png" alt="Hotel Seven 7 Logo" class="h-12 w-auto object-contain">
+      <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
+    </a>
+    <nav class="hidden md:flex gap-6 font-medium text-white/80">
+      <a href="about.html" class="hover:text-emerald-400">About</a>
+      <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
+      <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
+      <a href="facilities.html" class="hover:text-emerald-400">Facilities</a>
+      <a href="rent-cars.html" class="text-emerald-400 font-semibold">Rent a Car</a>
+      <a href="locations.html" class="hover:text-emerald-400">Our Locations</a>
+      <a href="contact.html" class="hover:text-emerald-400">Contact</a>
+    </nav>
+    <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20book%20a%20car."
+       target="_blank"
+       class="hidden md:inline-flex bg-emerald-600 text-white px-4 py-2 rounded-xl hover:bg-emerald-700 hover-glow">Book on WhatsApp</a>
+    <button id="menuBtn" class="md:hidden inline-flex items-center p-2 rounded hover:bg-emerald-700/30">
+      <i class="fas fa-bars text-white text-xl"></i>
+    </button>
+  </div>
+</header>
+
+<!-- ✅ Hero -->
+<section class="relative fade-up">
+  <img src="rentcar-hero.jpg" alt="Rent a Car Karachi" class="w-full h-[65vh] object-cover">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">Rent a Car Service</h1>
+    <p class="mt-4 text-lg md:text-xl max-w-2xl text-gray-200">Travel in comfort and style with Hotel Seven 7’s reliable car rental options in Karachi.</p>
+  </div>
+</section>
+
+<!-- ✅ Rent Car Grid -->
+<section class="py-20 fade-up">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emerald-400">Choose Your Ride</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Car 1 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car1.jpg" alt="Toyota Corolla" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Toyota Corolla</h3>
+        <p class="text-sm text-gray-300 mb-6">A comfortable and reliable sedan perfect for city rides and business travel.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Toyota%20Corolla."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+      <!-- Car 2 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car2.jpg" alt="Honda Civic" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Honda Civic</h3>
+        <p class="text-sm text-gray-300 mb-6">Premium comfort with sleek design, ideal for both casual and executive travel.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Honda%20Civic."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+      <!-- Car 3 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car3.jpg" alt="Suzuki Wagon R" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Suzuki Wagon R</h3>
+        <p class="text-sm text-gray-300 mb-6">Compact and fuel-efficient, best for short family trips and city drives.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Suzuki%20Wagon%20R."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+      <!-- Car 4 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car4.jpg" alt="Toyota Hiace" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Toyota Hiace</h3>
+        <p class="text-sm text-gray-300 mb-6">Spacious van for group travel, tours, and family functions.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Toyota%20Hiace."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+      <!-- Car 5 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car5.jpg" alt="Toyota Land Cruiser" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Toyota Land Cruiser</h3>
+        <p class="text-sm text-gray-300 mb-6">Luxury SUV with power and comfort, great for executive travel and events.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Toyota%20Land%20Cruiser."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+      <!-- Car 6 -->
+      <div class="card hover-scale hover-glow flex flex-col">
+        <img src="car6.jpg" alt="Suzuki Alto" class="w-full h-56 object-cover rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold mb-2">Suzuki Alto</h3>
+        <p class="text-sm text-gray-300 mb-6">Affordable and easy to drive, a budget-friendly option for daily commutes.</p>
+        <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20want%20to%20rent%20a%20Suzuki%20Alto."
+           target="_blank"
+           class="mt-auto inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+           Book Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Footer -->
+<footer class="py-10 bg-black/80 text-gray-300 fade-up">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+    <div>
+      <h3 class="font-semibold text-white mb-3">Hotel Seven 7</h3>
+      <p class="text-sm">Luxury hotel in Karachi offering premium hospitality and convenient rent a car services.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
+        <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
+        <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li>
+        <li><a href="facilities.html" class="hover:text-emerald-400">Facilities</a></li>
+        <li><a href="rent-cars.html" class="hover:text-emerald-400">Rent a Car</a></li>
+        <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-3">Connect</h3>
+      <div class="flex gap-6 text-2xl">
+        <a href="https://facebook.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/923095158670" target="_blank" class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-instagram"></i></a>
+         <a href="https://tiktok.com/@hotelseven7karachi" target="_blank" class="hover:text-emerald-400"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 text-center text-sm border-t border-white/20 pt-4">
+    © <span id="year"></span> Hotel Seven 7. All rights reserved. | Crafted by <a href="#" class="underline hover:text-emerald-400">Mehdi</a>
+  </div>
+</footer>
+
+<script>
+  // Auto year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll fade-up animation
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOnScroll = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  });
+  faders.forEach(f => appearOnScroll.observe(f));
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon = menuBtn.querySelector("i");
+</script>
+
+</body>
+</html>

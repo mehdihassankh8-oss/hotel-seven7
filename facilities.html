@@ -44,7 +44,6 @@
   <header class="sticky top-0 z-40 bg-black/50 glass border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2">
-        <!-- Make sure logo.png is inside same folder as this index.html -->
         <img src="./logo.png" alt="Hotel Seven 7 Logo" class="h-12 w-auto object-contain">
         <span class="font-bold text-xl tracking-tight text-white">Hotel Seven 7</span>
       </a>
@@ -52,7 +51,7 @@
         <a href="about.html" class="hover:text-emerald-400">About</a>
         <a href="rooms.html" class="hover:text-emerald-400">Rooms</a>
         <a href="gallery.html" class="hover:text-emerald-400">Gallery</a>
-        <a href="facilities.html" class="hover:text-emerald-400">Facilities</a>
+        <a href="services.html" class="hover:text-emerald-400">Facilities</a>
         <a href="locations.html" class="hover:text-emerald-400">Our Locations</a>
         <a href="contact.html" class="hover:text-emerald-400">Contact</a>
       </nav>
@@ -76,15 +75,57 @@
     </div>
   </header>
 
+
   <!-- ✅ Hero -->
   <section class="relative fade-up">
-    <img src="hometop.jpg" alt="Facilities Hero Image" class="w-full h-[70vh] object-cover">
+    <img src="hometop.jpg" alt="Services Hero Image" class="w-full h-[70vh] object-cover">
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">Facilities</h1>
-      <p class="mt-4 text-lg md:text-xl max-w-2xl text-gray-200">Discover everything Hotel Seven 7 Karachi offers for your comfort and convenience.</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">Services & Facilities </h1>
+      <p class="mt-4 text-lg md:text-xl max-w-2xl text-gray-200">Experience our premium services designed to make your stay more comfortable and convenient.</p>
     </div>
-  </section>
+    </section>
+
+<!-- ✅ Services Grid -->
+<section class="py-20 fade-up">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-emerald-400">Our Core Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+<!-- Rent a Car Service -->
+<div class="bg-black/50 p-10 rounded-2xl shadow hover-scale hover-glow flex flex-col items-center">
+  <i class="fas fa-car-side text-5xl text-emerald-400 mb-6"></i>
+  <h3 class="text-2xl font-semibold mb-3">Rent a Car Service</h3>
+  <p class="text-sm text-gray-300 mb-6">
+    Enjoy hassle-free travel with our professional rent-a-car service — available for city tours, airport transfers, and more.
+  </p>
+  <img src="rentcar-placeholder.jpg" alt="Rent a Car Service" class="w-full h-48 object-cover rounded-xl mb-6">
+  <a href="rent-cars.html"
+     class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+     Rent a Car Now
+  </a>
+</div>
+
+
+      
+    <!-- Laundry Service -->
+    <div class="bg-black/50 p-10 rounded-2xl shadow hover-scale hover-glow flex flex-col items-center">
+    <i class="fas fa-soap text-5xl text-emerald-400 mb-6"></i>
+    <h3 class="text-2xl font-semibold mb-3">Laundry Service</h3>
+    <p class="text-sm text-gray-300 mb-6">
+    Our professional laundry and dry-cleaning service ensures your garments are well taken care of during your stay!
+    </p>
+    <img src="laundry-placeholder.jpg" alt="Laundry Service" class="w-full h-48 object-cover rounded-xl mb-6">
+     <a href="https://wa.me/923095158670?text=Hello%20Hotel%20Seven%207,%20I%20am%20interested%20in%20your%20Laundry%20service."
+   target="_blank" 
+   class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-glow">
+   Learn More
+    </a>
+    </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Facilities Grid -->
 <section class="py-20 fade-up">
@@ -188,13 +229,6 @@
 </section>
 
 
-  <!-- ✅ CTA (same as index style) -->
-  <section class="py-16 bg-gradient-to-r from-emerald-700 to-emerald-500 text-white text-center fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">📲 Book Your Stay Now</h2>
-    <p class="mb-6 max-w-2xl mx-auto">Reserve instantly via WhatsApp and enjoy a seamless stay with comfort, safety, and world-class service.</p>
-    <a href="https://wa.me/923095158670" target="_blank" class="inline-block bg-black/70 hover:bg-black px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg hover-glow">Book on WhatsApp</a>
-  </section>
-
   <!-- ✅ Footer -->
   <footer class="py-10 bg-black/80 text-gray-300 fade-up">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6">
@@ -207,12 +241,12 @@
         <ul class="space-y-2 text-sm">
           <li><a href="about.html" class="hover:text-emerald-400">About</a></li>
           <li><a href="rooms.html" class="hover:text-emerald-400">Rooms</a></li>
-          <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li
-          <li><a href="gallery.html" class="hover:text-emerald-400">Facilities</a></li>
+          <li><a href="gallery.html" class="hover:text-emerald-400">Gallery</a></li>
+          <li><a href="services.html" class="hover:text-emerald-400">Facilities</a></li>
           <li><a href="locations.html" class="hover:text-emerald-400">Our Locations</a></li>
           <li><a href="contact.html" class="hover:text-emerald-400">Contact</a></li>
         </ul>
-      </div?
+      </div>
       <div>
         <h3 class="font-semibold text-white mb-3">Connect</h3>
         <div class="flex gap-6 text-2xl">

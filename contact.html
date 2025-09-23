@@ -151,6 +151,66 @@
     </div>
   </section>
 
+    <!-- Contact & Booking -->
+  <section id="contact" class="py-16 fade-up">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Contact info -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400 text-center lg:text-left">Reach Us</h2>
+        <p class="text-gray-300 mb-6 text-center lg:text-left">We’re here to assist you with bookings, directions, and all inquiries.</p>
+        <div class="space-y-2 text-center lg:text-left">
+          <p><strong>Phone:</strong> +923095158670</p>
+          <p><strong>Email:</strong> hotel@sevendha.com</p>
+          <p><strong>Address:</strong> DHA Phase 4, Karachi, Pakistan</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
+          <a target="_blank" href="https://wa.me/923095158670" class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">WhatsApp Now</a>
+          <a href="rooms.html" class="border border-white px-5 py-3 rounded-xl hover-scale hover-glow">View Rooms</a>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow hover-scale mt-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1810.4454007757377!2d67.02413254823304!3d24.833407720796327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dc232fe75c5%3A0xb7d116aaf07914e2!2sHotel%20Seven%207!5e0!3m2!1sen!2s!4v1758393592903!5m2!1sen!2s" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Booking form -->
+      <div class="bg-black/40 backdrop-blur p-8 rounded-2xl shadow hover-scale">
+        <h3 class="text-2xl font-bold mb-6 text-emerald-400 text-center lg:text-left">Booking Request</h3>
+        <form id="bookingForm" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" id="name" placeholder="Your Name" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
+            <input type="email" id="email" placeholder="Email Address" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
+          </div>
+          <input type="tel" id="phone" placeholder="Phone Number" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="date" id="checkin" required min="<?= date('Y-m-d') ?>" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <input type="date" id="checkout" required min="<?= date('Y-m-d') ?>" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+          </div>
+          <select id="roomType" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <option value="" disabled selected>Select Room</option>
+            <option value="Deluxe Room" class="text-black">Deluxe Twin Room</option>
+            <option value="Deluxe Queen Room" class="text-black">Deluxe Queen Room</option>
+            <option value="Double Room with Terrace" class="text-black">Double Room with Terrace</option>
+            <option value="Twin Room with Terrace" class="text-black">Twin Room with Terrace</option>
+            <option value="Family Room with Terrace" class="text-black">Family Room with Terrace</option>
+            <option value="Superior King Room" class="text-black">Superior King Room</option>
+            <option value="Superior Family Room" class="text-black">Superior Family Room</option>
+          </select>
+          <select id="guests" required class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white">
+            <option value="" disabled selected>Select Guests</option>
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4+ Guests</option>
+          </select>
+          <textarea id="message" rows="4" placeholder="Additional Requests" class="w-full rounded-lg px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-gray-400"></textarea>
+          <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 hover-scale hover-glow">Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Footer -->
   <footer class="py-10 bg-black/80 text-gray-300 fade-up">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center md:text-left">
@@ -232,6 +292,7 @@
   </script>
 </body>
 </html>
+
 
 
 

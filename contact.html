@@ -115,7 +115,7 @@
     <div class="relative flex items-center justify-center py-32 md:py-40 text-center text-white px-4">
       <div class="max-w-2xl">
         <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Contact & Booking</h1>
-        <p class="mt-4 text-lg md:text-xl">Send us a booking request directly on WhatsApp. Hotel Seven 7 Karachi welcomes you.</p>
+        <p class="mt-4 text-lg md:text-xl">Send us a booking request directly. Hotel Seven 7 Karachi welcomes you.</p>
       </div>
     </div>
   </section>
@@ -124,29 +124,42 @@
   <section id="contact" class="py-16 fade-up">
     <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
 
-<!-- Contact info -->
-<div>
-  <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400 text-center lg:text-left">Reach Us</h2>
-  <p class="text-gray-300 mb-6 text-center lg:text-left">We’re here to assist you with bookings, directions, and all inquiries.</p>
-  <div class="space-y-2 text-center lg:text-left">
-    <p><strong>Phone:</strong> +923095158670</p>
-    <p><strong>Email:</strong> info@hotel7seven.com</p>
-    <p><strong>Address:</strong> Karachi, Pakistan</p>
-  </div>
+<!-- Contact & Booking -->
+<section id="contact" class="py-16 fade-up">
+  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
 
-  <!-- Buttons -->
-<div class="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
-  <a target="_blank" href="https://wa.me/923095158670" 
-     class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">
-     WhatsApp Now
-  </a>
-  <a href="tel:+923095158670" 
-     class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">
-     Call Us
-  </a>
-</div>
-</div>
+    <!-- Contact info -->
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-emerald-400 text-center lg:text-left">Reach Us</h2>
+      <p class="text-gray-300 mb-6 text-center lg:text-left">
+        We’re here to assist you with bookings, directions, and all inquiries.
+      </p>
+      <div class="space-y-2 text-center lg:text-left">
+        <p><strong>Phone:</strong> +923095158670</p>
+        <p><strong>Email:</strong> info@hotel7seven.com</p>
+        <p><strong>Address:</strong> Karachi, Pakistan</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
+        <a target="_blank" href="https://wa.me/923095158670" 
+           class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">
+           WhatsApp Now
+        </a>
+        <a href="tel:+923095158670" 
+           class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">
+           Call Us
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@hotel7seven.com" target="_blank"
+           class="bg-emerald-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-emerald-700 hover-scale hover-glow">
+           Email Us
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
+
  
 <!-- Branch Images -->
 <div class="mt-10 grid md:grid-cols-2 gap-6">
@@ -232,6 +245,13 @@
     <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300">
       Send via WhatsApp
     </button>
+    
+     <!-- Email -->
+      <button type="button" onclick="sendEmail()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300">
+        Send via Email
+      </button>
+    </div>
+    
     <p class="text-gray-400 text-sm mt-2 text-center">You won't be charged yet</p>
   </form>
 </div>
@@ -319,51 +339,85 @@
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // Fade animations
-    const faders = document.querySelectorAll('.fade-up');
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, {threshold: 0.1, rootMargin: "0px 0px -50px 0px"});
-    faders.forEach(fader => appearOnScroll.observe(fader));
+  // Fade animations
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, {threshold: 0.1, rootMargin: "0px 0px -50px 0px"});
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
-    // WhatsApp booking form
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let phone = document.getElementById('phone').value;
-  let branch = document.getElementById('branch').value;
-  let arrival = document.getElementById('arrival').value;
-  let departure = document.getElementById('departure').value;
-  let room = document.getElementById('roomType').value;
-  let guests = document.getElementById('guests').value;
-  let message = document.getElementById('message').value;
+  // WhatsApp booking form
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let branch = document.getElementById('branch').value;
+    let arrival = document.getElementById('arrival').value;
+    let departure = document.getElementById('departure').value;
+    let room = document.getElementById('roomType').value;
+    let guests = document.getElementById('guests').value;
+    let message = document.getElementById('message').value;
 
-  let whatsappMessage = 
-    "Booking Request:\n" +
-    "Name: " + name + "\n" +
-    "Email: " + email + "\n" +
-    "Phone: " + phone + "\n" +
-    "Branch: " + branch + "\n" +
-    "Arrival: " + arrival + "\n" +
-    "Departure: " + departure + "\n" +
-    "Room: " + room + "\n" +
-    "Guests: " + guests + "\n" +
-    "Requests: " + message;
+    let whatsappMessage =
+      "Booking Request:\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Phone: " + phone + "\n" +
+      "Branch: " + branch + "\n" +
+      "Arrival: " + arrival + "\n" +
+      "Departure: " + departure + "\n" +
+      "Room: " + room + "\n" +
+      "Guests: " + guests + "\n" +
+      "Requests: " + message;
 
-  let url = "https://wa.me/923095158670?text=" + encodeURIComponent(whatsappMessage);
-  window.open(url, "_blank");
-});
- 
-  </script>
+    let url = "https://wa.me/923095158670?text=" + encodeURIComponent(whatsappMessage);
+    window.open(url, "_blank");
+  });
+
+  // Email booking function
+  function sendEmail() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let branch = document.getElementById('branch').value;
+    let arrival = document.getElementById('arrival').value;
+    let departure = document.getElementById('departure').value;
+    let room = document.getElementById('roomType').value;
+    let guests = document.getElementById('guests').value;
+    let message = document.getElementById('message').value;
+
+    let subject = "Booking Request - " + name;
+    let body =
+      "Booking Request:\n\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Phone: " + phone + "\n" +
+      "Branch: " + branch + "\n" +
+      "Arrival: " + arrival + "\n" +
+      "Departure: " + departure + "\n" +
+      "Room: " + room + "\n" +
+      "Guests: " + guests + "\n" +
+      "Requests: " + message;
+
+    let mailtoLink =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      "&to=info@hotel7seven.com" +
+      "&su=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.open(mailtoLink, "_blank");
+  }
+</script>
+
 </body>
 </html>
 

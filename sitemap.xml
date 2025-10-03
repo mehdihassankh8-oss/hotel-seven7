@@ -4,28 +4,42 @@
   <!-- Homepage -->
   <url>
     <loc>https://hotel7seven.com/</loc>
-    <lastmod>2025-09-25</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Rooms Page -->
   <url>
     <loc>https://hotel7seven.com/rooms</loc>
-    <lastmod>2025-09-25</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <priority>0.9</priority>
   </url>
 
+   <!-- Our Locations Page -->
+  <url>
+    <loc>https://hotel7seven.com/locations</loc>
+    <lastmod>2025-10-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+   <!-- Facilities Page -->
+  <url>
+    <loc>https://hotel7seven.com/facilities</loc>
+    <lastmod>2025-10-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  
   <!-- Gallery Page -->
   <url>
     <loc>https://hotel7seven.com/gallery</loc>
-    <lastmod>2025-09-25</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <priority>0.8</priority>
   </url>
 
   <!-- Contact & Booking Page -->
   <url>
     <loc>https://hotel7seven.com/contact</loc>
-    <lastmod>2025-09-25</lastmod>
+    <lastmod>2025-10-01</lastmod>
     <priority>0.8</priority>
   </url>
 

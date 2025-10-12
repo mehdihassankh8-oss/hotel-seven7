@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about.html", "destination": "/about-hotel-seven7-karachi", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact-hotel-seven7-official", "permanent": true },
+    { "source": "/facilities.html", "destination": "/facilities-hotel-seven7-Extras", "permanent": true },
+    { "source": "/rooms.html", "destination": "/rooms-hotel-seven7-karachi", "permanent": true },
+    { "source": "/gallery.html", "destination": "/gallery-hotel-seven7", "permanent": true },
+    { "source": "/facilities.html", "destination": "/facilities-hotel-seven7", "permanent": true },
+    { "source": "/locations.html", "destination": "/Locations-nearby-attractions-hotel-seven7-karachi", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Robots-Tag", "value": "index, follow" },
+        { "key": "Link", "value": "<https://hotel7seven.com/sitemap.xml>; rel=\"sitemap\"" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
